@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import Header from "./composant/Header";
+import Footer from "./composant/Footer";
+import Main from "./composant/Main";
+import { useState } from "react";
 
 function App() {
+  const [task, setTask] = useState("");
+  const [switch1, setcswitch1] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header title="To Do List" />
+      <Main
+        task={task}
+        setTask={setTask}
+        switch1={switch1}
+        setcswitch1={setcswitch1}
+      />
+      <Footer title="Made with React by Doud " />
     </div>
   );
 }
